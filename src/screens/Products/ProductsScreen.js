@@ -26,9 +26,9 @@ function ProductsScreen(props) {
          * pessoas.filter((pessoa) =>{ pessoa.idade < 18}) = [{ nome: 'pedro', idade: 12}]
          * **/
 
-        // if(minPrice != '0'){
-        //     filteredProducts = filteredProducts.filter('filtrar por preço minimo')
-        // }
+        if(minPrice > '0'){
+            filteredProducts = filteredProducts.filter((product) => product.price >= minPrice  )
+        }
 
         /*DEIXA POR ULTIMO DO ULTIMO*/
         // if(maxPrice != '0'){
