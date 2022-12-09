@@ -7,13 +7,12 @@ import ProductsScreen from "./screens/Products/ProductsScreen";
 function App() {
   
   const [activeScreen, setActiveScreen] = useState ("ProductsScreen");
-  const [cart,setCart] = useState([]);
   const [filterText,setFilterText] = useState("")
+  const [cart,setCart] = useState(JSON.parse(localStorage.getItem("cart")) || [])
   const [isFilterText,setIsFilterText] = useState(false)
   const [minPrice,setMinPrice]=useState(-Infinity)
   const [maxPrice,setMaxPrice]=useState(-Infinity)
-
-
+  
   const goToProductsScreen = () => setActiveScreen("ProductsScreen");
   const goToCartScreen = () => setActiveScreen("CartScreen");
 
@@ -30,9 +29,8 @@ function App() {
     } else {
         productFound.quantity++
     }
-
-    setCart(newCart)
-
+    localStorage.setItem("cart",JSON.stringify(newCart))
+    setCart(newCart);
    }
   // const mudaEstado = (el) =>{
   //   const display = document.getElementById(el).style.display;
@@ -52,7 +50,8 @@ function App() {
       (productInCart) => productInCart.id === productToDelete.id
     )
     newCart.splice(indexFound,1)
-    setCart(newCart)
+    localStorage.setItem("cart",JSON.stringify(newCart))
+    setCart(newCart);
   }
   
   const increaseQuantityInCart = (productToIncrease) => {
@@ -62,7 +61,8 @@ function App() {
       (productInCart) => productInCart.id === productToIncrease.id
     )
     productFound.quantity++
-    setCart(newCart)
+    localStorage.setItem("cart",JSON.stringify(newCart))
+    setCart(newCart);
   }
 
   const decreaseQuantityInCart = (productToDecrease) => {
@@ -73,7 +73,8 @@ function App() {
         (productInCart) => productInCart.id === productToDecrease.id
       )
       productFound.quantity--
-      setCart(newCart)
+      localStorage.setItem("cart",JSON.stringify(newCart))
+      setCart(newCart);
     }else{
       deleteFromCart(productToDecrease)
     }
