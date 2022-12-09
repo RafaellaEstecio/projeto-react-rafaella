@@ -1,26 +1,26 @@
 [
     {
         "id": 1,
-        "name": "Foguete 1",
+        "name": "Foguete 3",
         "year": 1910,
         "price": 50000,
-        "image":"../assets/img/foguete-1.jpg",
+        "image":"../assets/img/foguete-3.jpg",
         "imageAlt":"image foguete branco"
     },
     {
         "id": 2,
         "name": "Foguete 2",
         "year": 1910,
-        "price": 50000,
+        "price": 120000,
         "image":"../assets/img/foguete-2.jpg",
         "imageAlt":"imagem foguete grande"
     },
     {
         "id": 3,
-        "name": "Foguete 3",
+        "name": "Foguete 1",
         "year": 1910,
-        "price": 50000,
-        "image":"../assets/img/foguete-3.jpg",
+        "price": 220000,
+        "image":"../assets/img/foguete-1.jpg",
         "imageAlt":"imagem grande melhor foguete"
     },
     {

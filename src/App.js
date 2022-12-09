@@ -5,17 +5,16 @@ import ProductsScreen from "./screens/Products/ProductsScreen";
 
 
 function App() {
-  const [activeScreen, setActiveScreen] = useState ("ProductsScreen");
-
-  const[cart,setCart] = useState([]);
-
-  const[filterText,setFilterText] = useState("")
-  const[isFilterText,setIsFilterText] = useState(false)
-
-  const[minPrice,setMinPrice]=useState(-Infinity)
   
-  const goToProductsScreen = () => setActiveScreen("ProductsScreen");
+  const [activeScreen, setActiveScreen] = useState ("ProductsScreen");
+  const [cart,setCart] = useState([]);
+  const [filterText,setFilterText] = useState("")
+  const [isFilterText,setIsFilterText] = useState(false)
+  const [minPrice,setMinPrice]=useState(-Infinity)
+  const [maxPrice,setMaxPrice]=useState(-Infinity)
 
+
+  const goToProductsScreen = () => setActiveScreen("ProductsScreen");
   const goToCartScreen = () => setActiveScreen("CartScreen");
 
   const addToCart = (productToAdd) =>{
@@ -32,10 +31,7 @@ function App() {
         productFound.quantity++
     }
 
-
     setCart(newCart)
-
-
 
    }
   // const mudaEstado = (el) =>{
@@ -98,8 +94,9 @@ function App() {
                   filterText={filterText}
                   setMinPrice={setMinPrice}
                   minPrice={minPrice}
+                  setMaxPrice={setMaxPrice}
+                  maxPrice={maxPrice}
                   isFilterText={isFilterText}
-
                 />
       case "CartScreen":
         return <CartScreen

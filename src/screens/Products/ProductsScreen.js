@@ -1,40 +1,82 @@
-import {useState} from "react";
+import { useState } from "react";
 import products from "../../assets/products.json"
 import ProductCard from "../../components/ProductCard/ProductCard"
-import {Main} from "./ProductsScreen.styled"
+import { Main } from "./ProductsScreen.styled"
+import { ORDENAR } from "../../consts";
 
 function ProductsScreen(props) {
-    const {addToCart,
-           filterText,
-           minPrice,
-           setMinPrice,
-           isFilterText
-        } = props
+    const { addToCart,
+        filterText,
+        minPrice,
+        setMinPrice,
+        maxPrice,
+        setMaxPrice,
+        isFilterText,
+    } = props
 
-    const filterProductsByText = (e) =>{
-        
-        let filteredProducts = products;
+    const [selectedValue, setSelectedValue] = useState("")
+    let filteredProducts = products;
 
-        /** COMO UTILIZAR O FILTER
-         * array.filter((variável alvo) => { condição})
-         * let numeros = [1,2,3,4,5,9]
-         * numeros.filter((i) =>{ i != 9}) = [1,2,3,4,5]
+    const clearFilters = () => {
+        setMinPrice("");
+        setMaxPrice("");
+        setSelectedValue(ORDENAR.EMPTY);
+        filteredProducts = products;
+    }
 
-         * 
-         * array.filter((variável alvo) => { condição})
-         * let pessoas = [{ nome: 'pedro', idade: 12}, { nome: 'tiago', idade: 19}, { nome: 'marcos', idade: 34}]
-         * pessoas.filter((pessoa) =>{ pessoa.idade < 18}) = [{ nome: 'pedro', idade: 12}]
-         * **/
-
-        if(minPrice > '0'){
-            filteredProducts = filteredProducts.filter((product) => product.price >= minPrice  )
+    const filterProductsByText = (e) => {
+        if (minPrice > '0') {
+            filteredProducts = filteredProducts.filter((product) => product.price >= minPrice)
+        }
+        if (maxPrice > '0') {
+            filteredProducts = filteredProducts.filter((product) => product.price <= maxPrice)
         }
 
-        /*DEIXA POR ULTIMO DO ULTIMO*/
-        // if(maxPrice != '0'){
-        //     filteredProducts = filteredProducts.filter('filtrar por preço maximo')
-        // }
 
+        if (selectedValue === ORDENAR.AZ) {
+            filteredProducts = filteredProducts.sort(
+                (a, b) => {
+                    if (a.name < b.name) {
+                        return -1
+                    } else {
+                        return 1
+                    }
+                }
+            )
+        }
+         if (selectedValue === ORDENAR.ZA) {
+            filteredProducts = filteredProducts.sort(
+                (a, b) => {
+                    if (a.name > b.name) {
+                        return -1
+                    } else {
+                        return 1
+                    }
+                }
+            )
+        }
+         if (selectedValue === ORDENAR.MENOR_MAIOR) {
+            filteredProducts = filteredProducts.sort(
+                (a, b) => {
+                    if (a.price < b.price) {
+                        return -1
+                    } else {
+                        return 1
+                    }
+                }
+            )
+        }
+        if (selectedValue === ORDENAR.MAIOR_MENOR) {
+            filteredProducts = filteredProducts.sort(
+                (a, b) => {
+                    if (a.price > b.price) {
+                        return -1
+                    } else {
+                        return 1
+                    }
+                }
+            )
+        }
 
         return filteredProducts.filter(
             (product) => product.name.toLowerCase().includes(filterText.toLowerCase())
@@ -45,35 +87,54 @@ function ProductsScreen(props) {
     return (
         <Main>
             <section>
-            <h1>Products</h1>
-            {
-                isFilterText
-                &&  <input
-                        placeholder="Preço mínimo"
-                        type="number"
-                        value={minPrice}
-                        onChange={(e) => setMinPrice(e.target.value)}
-                    />
-            }
-           
+                <h1>Products</h1>
+                {
+                    isFilterText
+                    &&
+                    <>
+                        <input
+                            placeholder="Preço mínimo"
+                            type="number"
+                            value={minPrice}
+                            onChange={(e) => setMinPrice(e.target.value)}
+                        />
 
-            <hr/>
+                        <input
+                            placeholder="Preço maxímo"
+                            type="number"
+                            value={maxPrice}
+                            onChange={(e) => setMaxPrice(e.target.value)}
+                        />
+                        <select value={selectedValue}
+                            onChange={e => setSelectedValue(e.target.value)}>
+                            <option value={ORDENAR.EMPTY}>Ordenar</option>
+                            <option value={ORDENAR.AZ}>Título A-Z</option>
+                            <option value={ORDENAR.ZA}>Título Z-A</option>
+                            <option value={ORDENAR.MENOR_MAIOR}>Menor valor</option>
+                            <option value={ORDENAR.MAIOR_MENOR}>Maior valor</option>
+                        </select>
+                        <button onClick={clearFilters}>Limpar filtro</button>
+                    </>
+                }
+
+
+                <hr />
 
                 {
-                   filterProductsByText()
-                   .map((product)=>(
-                       <ProductCard 
-                       product={product}
-                       addToCart={addToCart}
-                       isOnProductsScreen={true}
-                       key={product.id}/>       
+                    filterProductsByText()
+                        .map((product) => (
+                            <ProductCard
+                                product={product}
+                                addToCart={addToCart}
+                                isOnProductsScreen={true}
+                                key={product.id} />
 
-                    ))
-               } 
+                        ))
+                }
             </section>
-           
+
         </Main>
     );
-  }
-  
-  export default ProductsScreen;
+}
+
+export default ProductsScreen;
