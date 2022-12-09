@@ -83,7 +83,10 @@ function App() {
   }
 
   const onChangeFilterText = (e) =>{
+    if(e.keyCode ===13){
       setFilterText(e.target.value)
+    }
+      
   }
   const renderScreen = () => {
     switch(activeScreen){

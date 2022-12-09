@@ -2,7 +2,7 @@ import { HeaderContainer } from "./Header.styled";
 import cartIcon from "../../assets/icon-cart.png"
 import searchIcon from "../../assets/icon-busca.png"
 import menuIcon from "../../assets/icon-menu.png"
-import logoIcon from "../../assets/logo.png"
+import logoIcon from "../../assets/logo1.jpg"
 
 function Header(props) {
     const{
@@ -34,7 +34,7 @@ function Header(props) {
                         className="search-input nav-item" 
                         placeholder="Buscar"
                         value={filterText}
-                        onChange={onChangeFilterText}
+                        onKeyUp={onChangeFilterText}
                     />  
                     <button  className="nav-item">
                         <img className="search-icon" src={searchIcon} alt="Search icon" />
