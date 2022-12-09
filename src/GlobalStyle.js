@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
 
 
     #root {
-        padding: 0;
+        padding: 0px;
         /*max-width: 1200px;*/
         margin: 0;
     }

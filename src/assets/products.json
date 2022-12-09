@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Foguete 1",
+        "year": 1910,
+        "price": 50000,
+        "image":"../assets/img/foguete-1.jpg",
+        "imageAlt":"image foguete branco"
+    },
+    {
+        "id": 2,
+        "name": "Foguete 2",
+        "year": 1910,
+        "price": 50000,
+        "image":"../assets/img/foguete-2.jpg",
+        "imageAlt":"imagem foguete grande"
+    },
+    {
+        "id": 3,
+        "name": "Foguete 3",
+        "year": 1910,
+        "price": 50000,
+        "image":"../assets/img/foguete-3.jpg",
+        "imageAlt":"imagem grande melhor foguete"
+    },
+    {
+        "id": 4,
+        "name": "Nave 1",
+        "year": 1910,
+        "price": 50000,
+        "image":"../assets/img/nave-1.jpg",
+        "imageAlt":"imagem nave grande"
+    },
+    {
+        "id": 5,
+        "name": "Nave 2",
+        "year": 1910,
+        "price": 100000,
+        "image":"../assets/img/nave-2.jpg",
+        "imageAlt":"imagem nave media"
+    },
+    {
+        "id": 6,
+        "name": "Nave 3",
+        "year": 1910,
+        "price": 150000,
+        "image":"../assets/img/nave-3.jpg",
+        "imageAlt":"imagem nave pequena"
+    }
+]

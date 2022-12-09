@@ -13,8 +13,8 @@ export const HeaderContainer = styled.header`
         justify-content:center;
         align-items: center;
         padding:20px;
-        background-color:green;
-        border-width: 10px;
+        background-color:black;
+        border-width: 50px;
         height: 20vh;
     }
     
@@ -30,8 +30,35 @@ export const HeaderContainer = styled.header`
         display: flex;
         justify-content: space-between;
         padding: 10px 15px;
-        background-color:red;
+        background-color:black;
     }
+    button{
+          :hover{
+               cursor:pointer;
+               filter:brightness(0.90);
+          }
+          :active{
+               filter:brightness(0.80);
+          }
+     
+    }
+    .cart-button {
+     position: relative;
+ }
+
+     .cart-badge {
+     position: absolute;
+     top: 0%;
+     right: 0%;
+     border:1px solid black;
+     border-radius: 50%;
+     background-color: white;
+     height: 18px;
+     width: 18px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
 
     .Nav .nav-item {
         height:40px;
@@ -59,6 +86,14 @@ export const HeaderContainer = styled.header`
    .menuBtn {
         width:35px;
         height:var(--main-height);
+   }
+   .btn-logo{
+        outline: none;
+        border:none;
+   }
+
+   .logo-img {
+        width:300px;
    }
     
 
