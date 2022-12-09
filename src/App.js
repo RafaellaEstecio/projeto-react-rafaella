@@ -10,6 +10,7 @@ function App() {
   const[cart,setCart] = useState([]);
 
   const[filterText,setFilterText] = useState("")
+  const[isFilterText,setIsFilterText] = useState(false)
 
   const[minPrice,setMinPrice]=useState(-Infinity)
   
@@ -84,10 +85,11 @@ function App() {
 
   const onChangeFilterText = (e) =>{
     if(e.keyCode ===13){
+      setIsFilterText(true)
       setFilterText(e.target.value)
     }
-      
   }
+  
   const renderScreen = () => {
     switch(activeScreen){
       case "ProductsScreen":
@@ -96,6 +98,8 @@ function App() {
                   filterText={filterText}
                   setMinPrice={setMinPrice}
                   minPrice={minPrice}
+                  isFilterText={isFilterText}
+
                 />
       case "CartScreen":
         return <CartScreen

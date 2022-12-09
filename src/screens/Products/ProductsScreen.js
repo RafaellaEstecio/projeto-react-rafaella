@@ -7,7 +7,8 @@ function ProductsScreen(props) {
     const {addToCart,
            filterText,
            minPrice,
-           setMinPrice
+           setMinPrice,
+           isFilterText
         } = props
 
     const filterProductsByText = (e) =>{
@@ -45,13 +46,16 @@ function ProductsScreen(props) {
         <Main>
             <section>
             <h1>Products</h1>
-            <input
-            placeholder="Preço mínimo"
-            type="number"
-            value={minPrice}
-            onChange={(e) => setMinPrice(e.target.value)}
-
-            />
+            {
+                isFilterText
+                &&  <input
+                        placeholder="Preço mínimo"
+                        type="number"
+                        value={minPrice}
+                        onChange={(e) => setMinPrice(e.target.value)}
+                    />
+            }
+           
 
             <hr/>
 
