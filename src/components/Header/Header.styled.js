@@ -67,6 +67,7 @@ export const HeaderContainer = styled.header`
    .search-container {
         display: flex;
         width:350px;
+        
    }
 
    .search-container input{
@@ -95,8 +96,5 @@ export const HeaderContainer = styled.header`
    .logo-img {
         width:300px;
    }
-    
 
-    
-    
 `

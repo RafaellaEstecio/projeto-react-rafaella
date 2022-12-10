@@ -17,13 +17,13 @@ function ProductCard(props){
                     <img  
                          src={product.image}
                          alt={product.imageAlt}
-                         width="210"
+                         width="280"
                          height={300} />
                     <div >
                        
                         <div >
                             <h2>{product.name}</h2>
-                            <h4>Descrição</h4>
+                            
                         </div>
                         <div className="card-price">
                             <h2>{priceFormatter.format(product.price)}</h2>

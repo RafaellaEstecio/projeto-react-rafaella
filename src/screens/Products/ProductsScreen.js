@@ -12,6 +12,7 @@ function ProductsScreen(props) {
         maxPrice,
         setMaxPrice,
         isFilterText,
+        setFilterText,
     } = props
 
     const [selectedValue, setSelectedValue] = useState("")
@@ -20,6 +21,7 @@ function ProductsScreen(props) {
     const clearFilters = () => {
         setMinPrice("");
         setMaxPrice("");
+        setFilterText("");
         setSelectedValue(ORDENAR.EMPTY);
         filteredProducts = products;
     }

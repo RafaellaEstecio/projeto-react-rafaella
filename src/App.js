@@ -13,7 +13,10 @@ function App() {
   const [minPrice,setMinPrice]=useState(-Infinity)
   const [maxPrice,setMaxPrice]=useState(-Infinity)
   
-  const goToProductsScreen = () => setActiveScreen("ProductsScreen");
+  const goToProductsScreen = () => {
+    setActiveScreen("ProductsScreen")
+    window.location.reload(true);
+  };
   const goToCartScreen = () => setActiveScreen("CartScreen");
 
   const addToCart = (productToAdd) =>{
@@ -93,6 +96,7 @@ function App() {
         return <ProductsScreen 
                   addToCart={addToCart}
                   filterText={filterText}
+                  setFilterText={setFilterText}
                   setMinPrice={setMinPrice}
                   minPrice={minPrice}
                   setMaxPrice={setMaxPrice}
@@ -117,6 +121,7 @@ function App() {
         goToCartScreen={goToCartScreen}
         itemsInCart={cart.length}
         onChangeFilterText={onChangeFilterText}
+        filterText={filterText}
         // mudaEstado={mudaEstado}
         />
         

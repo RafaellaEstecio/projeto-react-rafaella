@@ -10,9 +10,9 @@ function Header(props) {
         goToProductsScreen,
         itemsInCart,
         filterText,
-        onChangeFilterText,
-        mudaEstado
+        onChangeFilterText
     } = props
+
     return (
         <HeaderContainer>
             <div className="Logo">
@@ -21,10 +21,7 @@ function Header(props) {
                 </a>
             </div>
             <div className="Nav">
-                {/* <div id="minhaDiv" style="display:none">Conteudo</div> */}
-                {/* <button className="nav-item" onClick={mudaEstado}>
-                    <img className="menuBtn" src={menuIcon} alt="Menu icon" />
-                </button> */}
+              
                 <button className="nav-item" >
                     <img className="menuBtn" src={menuIcon} alt="Menu icon" />
                 </button>
@@ -33,10 +30,9 @@ function Header(props) {
                     <input 
                         className="search-input nav-item" 
                         placeholder="Buscar"
-                        value={filterText}
                         onKeyUp={onChangeFilterText}
                     />  
-                    <button  className="nav-item">
+                    <button className="nav-item">
                         <img className="search-icon" src={searchIcon} alt="Search icon" />
                     </button>
                 </div>

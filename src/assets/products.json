@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "name": "Foguete 3",
+        "name": "Delta X",
         "year": 1910,
         "price": 50000,
         "image":"../assets/img/foguete-3.jpg",
@@ -9,7 +9,7 @@
     },
     {
         "id": 2,
-        "name": "Foguete 2",
+        "name": "Triunfo",
         "year": 1910,
         "price": 120000,
         "image":"../assets/img/foguete-2.jpg",
@@ -17,7 +17,7 @@
     },
     {
         "id": 3,
-        "name": "Foguete 1",
+        "name": "Allana 22",
         "year": 1910,
         "price": 220000,
         "image":"../assets/img/foguete-1.jpg",
@@ -25,26 +25,98 @@
     },
     {
         "id": 4,
-        "name": "Nave 1",
+        "name": "Sat V",
         "year": 1910,
-        "price": 50000,
+        "price": 53000,
         "image":"../assets/img/nave-1.jpg",
         "imageAlt":"imagem nave grande"
     },
     {
         "id": 5,
-        "name": "Nave 2",
+        "name": "Kaza XX",
         "year": 1910,
-        "price": 100000,
+        "price": 152000,
         "image":"../assets/img/nave-2.jpg",
         "imageAlt":"imagem nave media"
     },
     {
         "id": 6,
-        "name": "Nave 3",
+        "name": "Natur 307",
         "year": 1910,
-        "price": 150000,
+        "price": 190000,
         "image":"../assets/img/nave-3.jpg",
         "imageAlt":"imagem nave pequena"
-    }
+    },
+    {
+        "id": 7,
+        "name": "Proton M",
+        "year": 1910,
+        "price": 62000,
+        "image":"../assets/img/protonm.jpg",
+        "imageAlt":"imagem nave grande"
+    },
+    {
+        "id": 8,
+        "name": "Pegasus XL",
+        "year": 1910,
+        "price": 170000,
+        "image":"../assets/img/pegasusXL.jpg",
+        "imageAlt":"imagem nave media"
+    },
+    {
+        "id": 9,
+        "name": "Delta V medium max",
+        "year": 1910,
+        "price": 180000,
+        "image":"../assets/img/deltaVmediummax.jpg",
+        "imageAlt":"imagem nave pequena"
+    },
+    {
+        "id": 10,
+        "name": "Delta V medium ",
+        "year": 1910,
+        "price": 220000,
+        "image":"../assets/img/deltaVmedium.jpg",
+        "imageAlt":"imagem nave pequena"
+    },
+    {
+        "id": 11,
+        "name": "Delta IV Heavy",
+        "year": 1910,
+        "price": 165000,
+        "image":"../assets/img/deltaIVHeavy.jpg",
+        "imageAlt":"imagem nave pequena"
+    }, 
+    {
+        "id": 12,
+        "name": "Ariane 5",
+        "year": 1910,
+        "price": 170000,
+        "image":"../assets/img/ariane5.jpg",
+        "imageAlt":"imagem nave pequena"
+    },
+    {
+        "id": 13,
+        "name": "Jussara 667",
+        "year": 1910,
+        "price": 50000,
+        "image":"../assets/img/onibus-espacial-1.jpg",
+        "imageAlt":"imagem nave grande"
+    },
+    {
+        "id": 14,
+        "name": "Capitur II",
+        "year": 1910,
+        "price": 13300000,
+        "image":"../assets/img/onibus-espacial-2.jpg",
+        "imageAlt":"imagem nave media"
+    },
+    {
+        "id": 15,
+        "name": "Phantom",
+        "year": 1910,
+        "price": 15990000,
+        "image":"../assets/img/onibus-espacial-3.jpg",
+        "imageAlt":"imagem nave pequena"
+    }   
 ]
