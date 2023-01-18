@@ -32,9 +32,9 @@ function Header(props) {
                         placeholder="Buscar"
                         onKeyUp={onChangeFilterText}
                     />  
-                    <button className="nav-item">
+                    {/* <button className="nav-item">
                         <img className="search-icon" src={searchIcon} alt="Search icon" />
-                    </button>
+                    </button> */}
                 </div>
 
                 <button  onClick={goToCartScreen} className="cart-button">
