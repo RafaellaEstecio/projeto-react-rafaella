@@ -27,7 +27,7 @@ overflow: hidden;
 //     padding:4px;
 //     border-radius:10px;
 //     background:#808080
-}
+//}
 button{
     margin-top: 6px;
     padding:4px;
@@ -37,11 +37,12 @@ button{
 
     :hover{
          cursor:pointer;
-         background:#808080
+         background:#808080;
          filter:brightness(0.90);
     }
     :active{
         
          filter:brightness(0.80);
     }
+}
 `
